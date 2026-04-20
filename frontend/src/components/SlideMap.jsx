@@ -32,11 +32,11 @@ export default function SlideMap({ slides }) {
               ${categoryColors[slide.primary_category] || categoryColors.Unknown}`}>
               {slide.primary_category}
             </span>
-            {slide.heading_hints?.[0] && (
-              <span className="text-xs text-fs-muted truncate flex-1">
-                {slide.heading_hints[0]}
-              </span>
-            )}
+              {slide.heading_hints?.[0] && slide.heading_hints[0].length > 6 && (
+    <span className="text-xs text-fs-muted truncate flex-1">
+      {slide.heading_hints[0]}
+    </span>
+  )}
             {slide.has_red_flags && (
               <span className="flex-shrink-0 w-2 h-2 rounded-full bg-red-400" title="Has red flags" />
             )}

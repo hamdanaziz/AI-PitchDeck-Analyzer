@@ -134,7 +134,7 @@ def _extract_heading_hints(page) -> list[str]:
             line_text = " ".join(w["text"] for w in line_words)
             line_size = sum(w.get("size", 12) for w in line_words) / len(line_words)
             word_count = len(line_words)
-            if line_size > avg_size * 1.3 and word_count <= 12 and len(line_text.strip()) > 2:
+            if line_size > avg_size * 1.3 and word_count <= 12 and len(line_text.strip()) > 4 and len(line_text.strip().replace(' ', '')) > 6:
                 headings.append(line_text.strip())
     except Exception:
         pass
